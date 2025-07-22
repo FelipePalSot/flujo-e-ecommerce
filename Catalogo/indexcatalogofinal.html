@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html><head>
+
+</head>
+<body>
+    <h2>Lista de productos</h2>
+    <div id="lista">
+
+    <div id="lista2">
+
+    </div>
+
+    <h2 id="titulo2">Nuevo producto</h2>
+    <div id="nuevo">
+        <p>Nombre: <input type="text" id="nombre"></p>
+        <p>id_categoria: <input type="text" id="id_categoria"></p>
+        <p>categoria: <input type="text" id="categoria"></p>
+        <p>Precio: <input type="text" id="precio"></p>
+        <p>Stock: <input type="text" id="stock"></p>
+        <button onclick="fnGuardar()">GUARDAR</button>
+    </div>
+
+    <h2>🔍 Filtrar por categoría</h2>
+
+    <label>Categoría:</label>
+    <input type="text" id="filtroCategoria">
+    <button onclick="filtrarPorCategoria()">Buscar</button>
+
+    <h3>📦 Productos encontrados:</h3>
+    <div id="resultadoFiltro"></div>
+
+    <h3>🛒 Carrito de compras:</h3>
+    <div id="carrito"></div>
+
+<script src="scriptcatalogofinal.js"></script>
+
+</body></html>

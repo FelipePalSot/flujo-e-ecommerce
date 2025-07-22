@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Plataforma eCommerce - Selección y Entrega</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+    }
+    .container {
+      display: flex;
+      gap: 30px;
+    }
+    .panel {
+      background-color: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #1e3a5f;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    input[type="number"], select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    #resultado {
+      background-color: #1e3a5f;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-wrap; 
+      min-height: 200px;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="panel">
+      <h1>Ingresar detalles del Pedido</h1>
+      <div class="form-group">
+        <label for="stock">Stock del Producto:</label>
+        <input type="number" id="stock" value="10">
+      </div>
+      <div class="form-group">
+        <label>Método de Pago:</label>
+        <input type="radio" id="pagoTarjeta" name="metodoPago" value="tarjeta" checked> Tarjeta
+        <input type="radio" id="pagoEfectivo" name="metodoPago" value="efectivo"> Pago contra entrega
+      </div>
+      <div id="detallesTarjeta">
+        <div class="form-group">
+          <label for="banco">Banco:</label>
+          <select id="banco">
+            <option>BBVA</option>
+            <option>BCP</option>
+            <option>SCOTIABANK</option>
+            <option>INTERBANK</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tipo de Tarjeta:</label>
+          <input type="radio" id="tipoDebito" name="tipoTarjeta" value="debito"> Débito
+          <input type="radio" id="tipoCredito" name="tipoTarjeta" value="credito" checked> Crédito
+        </div>
+        <div class="form-group" id="detalleCuotas">
+          <label for="cuotas">Número de Cuotas:</label>
+          <input type="number" id="cuotas" value="12">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Método de Entrega:</label>
+        <input type="radio" id="entregaDelivery" name="metodoEntrega" value="delivery" checked> Delivery a domicilio
+        <input type="radio" id="entregaRecojo" name="metodoEntrega" value="recojo"> Recojo en tienda
+      </div>
+      <button onclick="procesarPedido()">Procesar Pedido</button>
+    </div>
+    <div class="panel">
+      <h2>📋 Resumen del Proceso</h2>
+      <pre id="resultado"></pre>
+    </div>
+  </div>
+  <script src="seleccion.js" defer></script>
+</body>
+</html>
